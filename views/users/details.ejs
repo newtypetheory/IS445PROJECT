@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>User Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/edit_user.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  </head>
+  
+  <body style="background-color:black">
+  <div class="container" style="background-color: aqua; text-align: center;">
+    <div class="jumbotron" style="background-color: aqua; padding-bottom: 5px; margin-bottom: 5px;">
+    <h1>Retail Agency Database</h1>
+    <p>Welcome to the Admin Control Panel</p>
+  </div>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: aqua; align-content:center">
+        <div class="navbar-nav" style="text-align: center">
+          <h2><a class="btn btn-primary" href="/users" style="margin-right: 20px;"><i class="fas fa-home"> Index
+              <span class="sr-only">(current)</span>
+          </i></a></h2>
+          <h2><a class="btn btn-danger" href="/users/user"><i class="fas fa-user-plus"> New User</a></i></h2>
+      </nav>
+    </div>
+</head>
+
+  <div class="container" style="align-content: center; border: 2px solid; width: 40%; margin-top: 15px; background-color: white;">
+    <h1 style="font-weight: bold; text-align: center">Edit User</h1>
+    <table>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>
+            <a type="text" name="name" value="<%= user.name %>" /></a>
+          </td>
+        </tr>
+        <td>Email</td>
+        <td>
+          <a name="email" value="<%= user.email %>" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td>
+          <a type="number" name="telephone" id="telephone" value="<%= user.number %>" /></a>
+        </td>
+      </tr>
+      
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
+

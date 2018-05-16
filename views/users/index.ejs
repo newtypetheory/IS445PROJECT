@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee List</title>
+  <meta name="viewport" content="width=device-width">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/delete_user.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body style="background-color: black">
+  <div class="container" style="background-color: aqua; text-align: center;">
+    <div class="jumbotron" style="background-color: aqua; padding-bottom: 5px; margin-bottom: 5px;">
+    <h1>Retail Agency Database</h1>
+    <p>Welcome to the Admin Control Panel</p>
+  </div>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: aqua; align-content:center">
+        <div class="navbar-nav" style="text-align: center">
+          <h2><a class="btn btn-primary" href="/users" style="margin-right: 20px;"><i class="fas fa-home"> Index
+              <span class="sr-only">(current)</span>
+          </i></a></h2>
+          <h2><a class="btn btn-danger" href="/users/user"><i class="fas fa-user-plus"> New User</a></i></h2>
+      </nav>
+    </div>
+    
+  <div class="container" style="align-content: center; border: 2px solid; padding: 20px; margin-top: 15px; background-color: white;">
+      <div class="row">
+        <div class="col-sm">
+      <h1 style="font-weight: bold; text-align: center; margin-bottom: 15px;">User List</h1>
+    <% if(users.length>0) { %>
+      <table style="width: 100%; text-align: center">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i<users.length;i++) { %>
+                <tr>
+                <td>
+                  <ol type="number"><li></li></ol>
+                
+                <td>
+                  <%= users[i].name%>
+                </td>
+                <td>
+                  <%= users[i].email%>
+                </td>
+                <td>
+                  <%= users[i].number%>
+                </td>
+                <td>
+                    <a href="/users/details/<%= users[i]._id%>" role="button" class="btn btn-outline-primary">
+                      Details
+                    </a>
+                <td>
+                  <a href="/users/user/<%= users[i]._id%>"><button type="button" class="btn btn-outline-warning">
+                      Edit
+                  </button>
+
+                  </a>
+                </td>
+                <td>
+                  <button class="deleteButton btn btn-outline-danger" data-uid="<%= users[i]._id%>">
+                    Delete
+                  </button>
+                </td>
+              </td>
+              </tr>
+              <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No users found.</div>
+        <% } %>
+      </div>
+      </div>
+  </div>
+</body>
+
+</html>
